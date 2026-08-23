@@ -38,7 +38,7 @@ void  bin(vector<int>&v){
             temp.push_back(aisa[aisa.size()-1-i]);
         }       
     }
-    for (int i = 0; i < temp.size(); i += 8) {
+    for (int i = 0; i + 8 <= (int)temp.size(); i += 8) {
         vector<long long> ouu(temp.begin() + i, temp.begin() + i + 8);
         int result = final(ouu);
         cout<<(char)result;
