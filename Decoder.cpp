@@ -50,11 +50,19 @@ void  bin(vector<int>&v){
 
 
 void Decode(string s){
+    while (!s.empty() && s.back() == '=') {     
+        s.pop_back();
+    }
     vector<int>v;
     vector<string>o;
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
     for(int i=0; i<s.size();i++){
         int value = alphabet.find(s[i]);
+        if (value == (int)string::npos) {    
+            cerr << "Error: Invalid Base64 character." << endl;
+            return;
+        }
         v.push_back(value);
     }
     
