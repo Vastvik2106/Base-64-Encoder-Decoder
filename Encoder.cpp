@@ -38,7 +38,7 @@ void Encode(string s)
     vector<int> v;
     for (int i = 0; i < s.size(); i++)
     {
-        int x = (int)s[i];
+        int x = (int)(unsigned char)s[i];
         vector<int> z = bin(x);
         for (int j = 0; j < z.size(); j++) {
             v.push_back(z[j]);
