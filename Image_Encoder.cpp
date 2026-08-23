@@ -55,7 +55,7 @@ vector<int> bin(int x){
 }
 
 
-void Encode(string s){
+void Image_Encode(string s){
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     vector<uint8_t> byte = biteTobyte(s);
     vector<int> v;
@@ -104,7 +104,7 @@ int main(){
     string image;
     getline(cin,image); 
 
-    Encode(image);
+    Image_Encode(image);
 
     
 }
