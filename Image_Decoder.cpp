@@ -11,6 +11,14 @@
 #include <sstream>
 using namespace std;
 
+vector<int> bin6(int x){
+    vector<int> o(6);
+    for (int b = 5; b >= 0; b--) {
+        o[5 - b] = (x >> b) & 1;
+    }
+    return o;
+}
+
 string Raa(){
     struct termios oldt, newt;
     tcgetattr(STDIN_FILENO, &oldt);
@@ -59,7 +67,7 @@ void Image_Decode(string inputPath, string output){
             cerr << "Error: Invalid Base64 character." << endl;
             return;
         }
-        vector<int> z = bin(x);
+        vector<int> z = bin6(x);
         for (int j = 0; j < (int)z.size(); j++) v.push_back(z[j]);
     }
 
@@ -82,4 +90,5 @@ void Image_Decode(string inputPath, string output){
     cout << "Image decoded successfully." << endl;
     cout << "Image saved to: " << output << endl;
 }
+
 
