@@ -70,11 +70,3 @@ void Decode(string s){
 
 }
 
-
-int main(){
-    string s;
-    getline(cin,s);
-
-    Decode(s);
-
-}

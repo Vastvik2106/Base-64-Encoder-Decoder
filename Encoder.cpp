@@ -64,10 +64,3 @@ void Encode(string s)
     cout << endl;
 }
 
-int main()
-{
-    string s;
-    getline(cin, s);
-
-    Encode(s);
-}
