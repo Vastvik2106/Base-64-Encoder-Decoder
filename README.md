@@ -54,7 +54,7 @@ Because Vortex64 operates on raw bytes rather than characters or image pixels, t
 
 2) Compile the program:
 Bash
-> g++ -std=c++17 main.cpp -o Vortex64
+> g++ -std=c++17 main.cpp Encoder.cpp Decoder.cpp Image_Encoder.cpp Image_Decoder.cpp -o Vortex64
 
 3) Run the program:
 > ./Vortex64
