@@ -1,7 +1,7 @@
 # Vortex64: Base 64 Encoder/Decoder in c++
 Implemented Base64 encoding and decoding entirely from first principles in C++, manually transforming raw binary streams into 6-bit Base64 representations and reconstructing the original bytes, with binary/image support and a custom CLI without external encoding libraries.
 
-##Vortex64: Description
+## Vortex64: Description
 Vortex64 is a pure C++ implementation of the Base64 encoding and decoding pipeline, built from first principles using manual bit-level transformations to convert arbitrary binary streams into 6-bit Base64 representations and reconstruct the original data, with support for binary and image files through a custom CLI.
 
 
@@ -33,19 +33,17 @@ The decoder reverses this transformation.
 Each Base64 character is first mapped back to its corresponding 6-bit numerical value using the Base64 alphabet. These 6-bit values are then reconstructed into the original byte stream.Padding characters are interpreted according to the number of meaningful bytes represented by the final Base64 block, ensuring that only the original data is reconstructed. The complete decoding pipeline is therefore Base64 [Representation → Alphabet lookup → 6-bit values → Bit-level reconstruction → 8-bit bytes → Original Binary Data].
 
 Because Vortex64 operates on raw bytes rather than characters or image pixels, the same encoding and decoding mechanism can be applied to essentially any binary file. An image is therefore not treated as an image internally it is treated as its underlying byte sequence. The implementation consequently demonstrates the complete Base64 transformation at the byte and bit level, rather than abstracting the process behind a pre-existing encoding library.
-
-                         Vortex64
-		            │
+					Vortex64
         ┌──────────────┴──────────────┐
-        ↓                                      ↓
-   Binary → Base64                       Base64 → Binary
-        │                                		│
-        ↓                                       ↓
-   Any byte stream              	Original bytes
-        │                                      │
+        ↓                             ↓
+   Binary → Base64                Base64 → Binary
+        │                             │
+        ↓                             ↓
+   Any byte stream              Original bytes
+        │                             │
         └──────────────┬──────────────┘
-			   ↓
-                  Text / Images / Files
+			           ↓
+             Text / Images / Files
 
 ## How to use it
 1) Clone the repository:
