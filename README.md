@@ -34,18 +34,18 @@ Each Base64 character is first mapped back to its corresponding 6-bit numerical 
 
 Because Vortex64 operates on raw bytes rather than characters or image pixels, the same encoding and decoding mechanism can be applied to essentially any binary file. An image is therefore not treated as an image internally it is treated as its underlying byte sequence. The implementation consequently demonstrates the complete Base64 transformation at the byte and bit level, rather than abstracting the process behind a pre-existing encoding library.
 
-
->					Vortex64
->        ┌──────────────┴──────────────┐
->        ↓                             ↓
->   Binary → Base64                Base64 → Binary
->        │                             │
->        ↓                             ↓
->   Any byte stream              Original bytes
->        │                             │
->        └──────────────┬──────────────┘
->			           ↓
->             Text / Images / Files
+```text
+                         Vortex64
+                            │
+              ┌─────────────┴─────────────┐
+              ↓                           ↓
+       Binary → Base64             Base64 → Binary
+              ↓                           ↓
+       Any byte stream              Original bytes
+              └─────────────┬─────────────┘
+                            ↓
+                    Text / Images / Files
+```
 
 ## How to use it
 1) Clone the repository:
