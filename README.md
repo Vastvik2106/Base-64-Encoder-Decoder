@@ -49,7 +49,7 @@ Because Vortex64 operates on raw bytes rather than characters or image pixels, t
 
 ## How to use it
 1) Clone the repository:
-> git clone https://github.com/Vastvik2106/Base-64-Encoder-Decoder.git
+> git clone https://github.com/Vastvik2106/Vortex64-Encoder-Decoder.git
 > cd Base-64-Encoder-Decoder
 
 2) Compile the program:
