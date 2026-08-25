@@ -33,6 +33,8 @@ The decoder reverses this transformation.
 Each Base64 character is first mapped back to its corresponding 6-bit numerical value using the Base64 alphabet. These 6-bit values are then reconstructed into the original byte stream.Padding characters are interpreted according to the number of meaningful bytes represented by the final Base64 block, ensuring that only the original data is reconstructed. The complete decoding pipeline is therefore Base64 [Representation → Alphabet lookup → 6-bit values → Bit-level reconstruction → 8-bit bytes → Original Binary Data].
 
 Because Vortex64 operates on raw bytes rather than characters or image pixels, the same encoding and decoding mechanism can be applied to essentially any binary file. An image is therefore not treated as an image internally it is treated as its underlying byte sequence. The implementation consequently demonstrates the complete Base64 transformation at the byte and bit level, rather than abstracting the process behind a pre-existing encoding library.
+
+
 					Vortex64
         ┌──────────────┴──────────────┐
         ↓                             ↓
